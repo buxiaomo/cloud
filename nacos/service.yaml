@@ -11,7 +11,7 @@ spec:
       port: 8848
       targetPort: 8848
       protocol: TCP
-      NodePort: 31387
+      nodePort: 31387
     - name: tcp-9848
       port: 9848
       targetPort: 9848
