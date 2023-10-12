@@ -1,14 +1,14 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: 
+  name: nacos
 data:
   application.properties: |-
     spring.datasource.platform=mysql
     db.num=1
-    db.url.0=jdbc:mysql://mysql.infra.svc.cluster.local:3306/nacos?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+    db.url.0=jdbc:mysql://mysql:3306/nacos?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
     db.user=root
-    db.password=root
+    db.password=f6AcBdjsSIda29W
 
     nacos.naming.empty-service.auto-clean=true
     nacos.naming.empty-service.clean.initial-delay-ms=50000
