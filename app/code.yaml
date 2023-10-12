@@ -36,18 +36,18 @@ spec:
             - name: tcp
               containerPort: 9502
               protocol: TCP
-          livenessProbe:
-            initialDelaySeconds: 15
-            periodSeconds: 5
-            timeoutSeconds: 5
-            tcpSocket:
-              port: 9502
-          readinessProbe:
-            initialDelaySeconds: 5
-            periodSeconds: 5
-            timeoutSeconds: 5
-            tcpSocket:
-              port: 9502
+          # livenessProbe:
+          #   initialDelaySeconds: 15
+          #   periodSeconds: 5
+          #   timeoutSeconds: 5
+          #   tcpSocket:
+          #     port: 9502
+          # readinessProbe:
+          #   initialDelaySeconds: 5
+          #   periodSeconds: 5
+          #   timeoutSeconds: 5
+          #   tcpSocket:
+          #     port: 9502
           env:
             - name: TZ
               value: "Asia/Shanghai"

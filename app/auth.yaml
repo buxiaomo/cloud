@@ -36,18 +36,18 @@ spec:
             - name: tcp
               containerPort: 9302
               protocol: TCP
-          livenessProbe:
-            initialDelaySeconds: 15
-            periodSeconds: 5
-            timeoutSeconds: 5
-            tcpSocket:
-              port: 9302
-          readinessProbe:
-            initialDelaySeconds: 5
-            periodSeconds: 5
-            timeoutSeconds: 5
-            tcpSocket:
-              port: 9302
+          # livenessProbe:
+          #   initialDelaySeconds: 15
+          #   periodSeconds: 5
+          #   timeoutSeconds: 5
+          #   tcpSocket:
+          #     port: 9302
+          # readinessProbe:
+          #   initialDelaySeconds: 5
+          #   periodSeconds: 5
+          #   timeoutSeconds: 5
+          #   tcpSocket:
+          #     port: 9302
           env:
             - name: TZ
               value: "Asia/Shanghai"

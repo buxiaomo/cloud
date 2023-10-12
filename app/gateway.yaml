@@ -36,18 +36,18 @@ spec:
             - name: tcp
               containerPort: 9201
               protocol: TCP
-          livenessProbe:
-            initialDelaySeconds: 15
-            periodSeconds: 5
-            timeoutSeconds: 5
-            tcpSocket:
-              port: 9201
-          readinessProbe:
-            initialDelaySeconds: 5
-            periodSeconds: 5
-            timeoutSeconds: 5
-            tcpSocket:
-              port: 9201
+          # livenessProbe:
+          #   initialDelaySeconds: 15
+          #   periodSeconds: 5
+          #   timeoutSeconds: 5
+          #   tcpSocket:
+          #     port: 9201
+          # readinessProbe:
+          #   initialDelaySeconds: 5
+          #   periodSeconds: 5
+          #   timeoutSeconds: 5
+          #   tcpSocket:
+          #     port: 9201
           env:
             - name: TZ
               value: "Asia/Shanghai"
