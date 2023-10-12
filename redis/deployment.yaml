@@ -24,6 +24,12 @@ spec:
       containers:
         - name: redis
           image: redis:6.0.9-alpine
+          command:
+            - redis-server 
+            - --appendonly 
+            - yes  
+            - --requirepass 
+            - "f5DD56xIRboWqTK"
           imagePullPolicy: Always
           volumeMounts:
             - name: redis-vol
