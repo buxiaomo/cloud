@@ -8,4 +8,8 @@
 ```
 docker run -it --rm -v /root/cloud:/app -w /app maven:3.8.7-amazoncorretto-8 mvn clean package -Dmaven.test.skip=true
 docker run -it --rm -v /root/cloud:/app -w /app node:16 npm i && npm run build
+
+
+
+docker build -t yangyuw/fronted:1.0 .
 ```
