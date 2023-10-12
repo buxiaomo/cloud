@@ -7,8 +7,8 @@ spec:
     app: code
   ports:
     - name: code
-      port: 3306
-      targetPort: 3306
+      port: 9502
+      targetPort: 9502
       protocol: TCP
 
 ---
@@ -30,24 +30,24 @@ spec:
     spec:
       containers:
         - name: code
-          image: code:1.0
+          image: yangyuw/code:1.0
           imagePullPolicy: Always
           ports:
             - name: tcp
-              containerPort: 6379
+              containerPort: 9502
               protocol: TCP
           livenessProbe:
             initialDelaySeconds: 15
             periodSeconds: 5
             timeoutSeconds: 5
             tcpSocket:
-              port: 6379
+              port: 9502
           readinessProbe:
             initialDelaySeconds: 5
             periodSeconds: 5
             timeoutSeconds: 5
             tcpSocket:
-              port: 6379
+              port: 9502
           env:
             - name: TZ
               value: "Asia/Shanghai"
