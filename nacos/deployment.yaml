@@ -25,10 +25,38 @@ spec:
         - name: nacos
           image: nacos/nacos-server:v2.1.2
           imagePullPolicy: Always
-          volumeMounts:
-            - name: nacos
-              mountPath: /home/nacos/conf/application.properties
-              subPath: application.properties
+          env:
+            - name: TZ
+              value: "Asia/Shanghai"
+            - name: MODE
+              value: "standalone"
+            - name: SPRING_DATASOURCE_PLATFORM
+              value: "mysql"
+            - name: MYSQL_SERVICE_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: nacos
+                  key: mysql.host
+            - name: MYSQL_SERVICE_DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: nacos
+                  key: mysql.db.name
+            - name: MYSQL_SERVICE_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: nacos
+                  key: mysql.port
+            - name: MYSQL_SERVICE_USER
+              valueFrom:
+                configMapKeyRef:
+                  name: nacos
+                  key: mysql.user
+            - name: MYSQL_SERVICE_PASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: nacos
+                  key: mysql.password
           ports:
             - name: tcp
               containerPort: 8848
@@ -45,11 +73,7 @@ spec:
           #   timeoutSeconds: 5
           #   tcpSocket:
           #     port: 8848
-          env:
-            - name: TZ
-              value: "Asia/Shanghai"
-            - name: MODE
-              value: "standalone"
+
           # resources:
           #   limits:
           #     cpu: "2"
