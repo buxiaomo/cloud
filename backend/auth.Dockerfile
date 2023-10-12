@@ -1,4 +1,4 @@
-FROM maven:3.8.7-amazoncorretto-8
+FROM openjdk:8
 
 WORKDIR /app
 
