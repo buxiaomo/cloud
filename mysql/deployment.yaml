@@ -18,8 +18,8 @@ spec:
     spec:
       volumes:
         - name: mysql-vol
-          persistentVolumeClaim:
-            claimName: phoenix-dev
+          hostPath:
+            path: /data/mysql
         - name: mysql
           configMap:
             defaultMode: 0755

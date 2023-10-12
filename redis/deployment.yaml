@@ -18,8 +18,8 @@ spec:
     spec:
       volumes:
         - name: redis-vol
-          persistentVolumeClaim:
-            claimName: phoenix-dev
+          hostPath:
+            path: /data/redis
       containers:
         - name: redis
           image: redis:6.0.9-alpine
